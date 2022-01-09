@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "24469271921",
+    "project_id": "golfchat-62671",
+    "storage_bucket": "golfchat-62671.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24469271921:android:108d1920c9e3fc9ee172d0",
+        "android_client_info": {
+          "package_name": "com.example.golfchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24469271921-2oi5a5l029gqi0vpnskevo249ipjqele.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.golfchat",
+            "certificate_hash": "e1254c76443335f14098db0aa86f261ae96fa721"
+          }
+        },
+        {
+          "client_id": "24469271921-qhlbdlv33ee3cqpeql1l4c8du8466r73.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBY0AOvR5R8TUUjBAJ9RDQLJI2dzR6oJPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24469271921-qhlbdlv33ee3cqpeql1l4c8du8466r73.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
