@@ -12,7 +12,8 @@
 <!--       <activity android:name=".UserActivity"/>-->
 <!--       <activity android:name=".ProductDetail" />-->
         <activity android:name=".ForgotpasswordActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity android:name=".RegisterActivity"
+            android:parentActivityName=".LoginActivity"/>
 <!--        <activity android:name=".CatalogActivity" />-->
 <!--        <activity android:name=".ContactUs"/>-->
         <activity android:name=".LoginActivity">
