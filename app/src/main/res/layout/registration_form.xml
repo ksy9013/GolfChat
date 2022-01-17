@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".RegisterActivity"
-        android:background="@drawable/registerbackground">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/registerbackground"
+    android:visibility="visible"
+    tools:context=".RegisterActivity">
 
 
     <ImageView
@@ -49,8 +50,8 @@
 
     <EditText
         android:id="@+id/fname"
-        android:layout_width="320dp"
-        android:layout_height="45dp"
+        android:layout_width="297dp"
+        android:layout_height="49dp"
         android:layout_marginTop="80dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/registerrectangle"
@@ -60,43 +61,31 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/lname"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_registration_prompt"
+        app:layout_constraintVertical_bias="0.782"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/lname"
-        android:layout_width="320dp"
-        android:layout_height="45dp"
+        android:layout_width="297dp"
+        android:layout_height="49dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/registerrectangle"
         android:hint="Last Name"
         android:paddingStart="10dp"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/nickname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/nickname"
-        android:layout_width="320dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/registerrectangle"
-        android:hint="Nick Name"
-        android:paddingStart="10dp"
-        android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/email"
-        android:layout_width="320dp"
-        android:layout_height="45dp"
+        android:layout_width="297dp"
+        android:layout_height="49dp"
         android:layout_marginBottom="25dp"
         android:background="@drawable/registerrectangle"
         android:hint="Email"
@@ -109,42 +98,28 @@
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/password"
-        android:layout_width="320dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="25dp"
-        android:background="@drawable/registerrectangle"
-        android:hint="Password"
-        android:paddingStart="10dp"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/confirm_password"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
-
-
-    <EditText
         android:id="@+id/confirm_password"
-        android:layout_width="320dp"
-        android:layout_height="45dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="297dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="30dp"
         android:background="@drawable/registerrectangle"
         android:hint="Confirm Password"
         android:paddingStart="10dp"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btn_submit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_submit"
         android:layout_width="138dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="44dp"
         android:padding="0dp"
-        android:text="LOGIN"
+        android:text="Submit"
         android:textColor="#FFFFFF"
         android:textSize="15sp"
         app:backgroundTint="#326431"
@@ -153,6 +128,33 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="297dp"
+        android:layout_height="49dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/registerrectangle"
+        android:hint="Password"
+        android:paddingStart="10dp"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/confirm_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

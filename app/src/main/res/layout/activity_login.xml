@@ -26,7 +26,7 @@
         android:id="@+id/text_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
         android:fontFamily="@font/lato_bold"
         android:text="Login"
         android:textColor="#011F00"
@@ -52,22 +52,22 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_signin"
         android:layout_width="138dp"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="60dp"
         android:padding="0dp"
         android:text="Sign in"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="20sp"
-        app:backgroundTint="#326431"
+        app:backgroundTint="#FCE07D"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgot_password" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/register"
+        android:id="@+id/btn_signup"
         android:layout_width="138dp"
         android:layout_height="50dp"
         android:layout_marginStart="60dp"
@@ -75,11 +75,11 @@
         android:onClick="btn_registerForm"
         android:padding="0dp"
         android:text="SIGN UP"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="20sp"
-        app:backgroundTint="#326431"
+        app:backgroundTint="#FCE07D"
         app:cornerRadius="20dp"
-        app:layout_constraintEnd_toStartOf="@+id/btn_login"
+        app:layout_constraintEnd_toStartOf="@+id/btn_signin"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgot_password" />
@@ -149,7 +149,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/register"
+        app:layout_constraintTop_toBottomOf="@+id/btn_signup"
         app:srcCompat="@drawable/or" />
 
     <!--    <ImageButton-->

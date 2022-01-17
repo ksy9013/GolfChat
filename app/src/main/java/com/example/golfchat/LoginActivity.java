@@ -29,10 +29,10 @@ public class LoginActivity extends AppCompatActivity {
     EditText mEmail;
     @BindView(R.id.edittext_password)
     EditText mPassword;
-//    @BindView((R.id.btn_login))
-//    MaterialButton login_btn;
-    @BindView(R.id.register)
-    MaterialButton register_btn;
+    @BindView((R.id.btn_signup))
+    MaterialButton signup_btn;
+    @BindView(R.id.btn_signin)
+    MaterialButton login_btn;
 //    @BindView((R.id.forgot_password))
 //    MaterialButton forgotpassword_btn;
 //    @BindView((R.id.btn_google))
@@ -79,7 +79,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(this,MainActivity.class));
 
         }else {
-            Toast.makeText(this,"You Didnt signed in",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"You didnt signed in",Toast.LENGTH_LONG).show();
         }
 
     }
