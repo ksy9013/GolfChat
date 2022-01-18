@@ -1,24 +1,21 @@
-package com.example.golfchat;
+package com.example.golfchat.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.golfchat.MainActivity;
+import com.example.golfchat.R;
+import com.example.golfchat.RegisterActivity;
+import com.example.golfchat.databinding.ActivityLoginBinding;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import butterknife.BindView;
 
@@ -39,12 +36,14 @@ public class LoginActivity extends AppCompatActivity {
 //    Button google_btn;
 
     GoogleSignInClient mGoogleSignInClient;
-
+    private ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        binding = ActivityLoginBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        setListeners();
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -56,9 +55,9 @@ public class LoginActivity extends AppCompatActivity {
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
 
-    public void btn_registerForm(View view){
-        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
-    }
+//    public void btn_signup(View view){
+//        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+//    }
 
     @Override
     protected void onStart() {
@@ -70,17 +69,38 @@ public class LoginActivity extends AppCompatActivity {
         updateUI(account);
     }
 
+    private void setListeners(){
+       binding.btnSignup.setOnClickListener(v->
+               startActivity(new Intent(getApplicationContext(), RegisterActivity.class)));
+//       binding.btnSignin.setOnClickListener(v -> addDataToFirestore());
+    }
+
 
     //Change UI according to user data.
     public void updateUI(GoogleSignInAccount account){
 
         if(account != null){
             Toast.makeText(this,"You Signed In successfully",Toast.LENGTH_LONG).show();
-            startActivity(new Intent(this,MainActivity.class));
+            startActivity(new Intent(this, MainActivity.class));
 
         }else {
             Toast.makeText(this,"You didnt signed in",Toast.LENGTH_LONG).show();
         }
 
     }
+
+//    private void addDataToFirestore(){
+//        FirebaseFirestore database = FirebaseFirestore.getInstance();
+//        HashMap<String, Object> data = new HashMap<>();
+//        data.put("first_name", "Kaylee");
+//        data.put("last_name", "Kim");
+//        database.collection("users")
+//                .add(data)
+//                .addOnSuccessListener(documentReference -> {
+//                    Toast.makeText(getApplicationContext(), "Data Inserted", Toast.LENGTH_SHORT).show();
+//                })
+//                .addOnFailureListener(exception -> {
+//                    Toast.makeText(getApplicationContext(),exception.getMessage(), Toast.LENGTH_SHORT).show();
+//                });
+//    }
 }
